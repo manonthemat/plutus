@@ -155,7 +155,7 @@ renderCards wallets newWalletDetails templates playState =
           <> [ div_
                 $ (flip foldMap mCard) \cardType -> case cardType of
                     -- TODO: Should this be renamed to CreateContactCard?
-                    CreateWalletCard mTokenName -> [ newWalletCard wallets newWalletNickname newWalletContractId remoteDataPubKey mTokenName ]
+                    CreateWalletCard mTokenName -> [ newWalletCard wallets newWalletDetails mTokenName ]
                     ViewWalletCard walletDetails -> [ walletDetailsCard walletDetails ]
                     PutdownWalletCard -> [ putdownWalletCard currentWalletDetails ]
                     TemplateLibraryCard -> [ TemplateAction <$> templateLibraryCard templates ]
