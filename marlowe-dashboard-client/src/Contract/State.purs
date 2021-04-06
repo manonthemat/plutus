@@ -28,7 +28,6 @@ import Marlowe.Execution (NamedAction(..), _namedActions, _state, _steps, initEx
 import Marlowe.Extended.Metadata (MetaData, emptyContractMetadata)
 import Marlowe.Semantics (Contract(..), Input(..), Slot, _minSlot)
 import Marlowe.Semantics as Semantic
-import Plutus.PAB.Webserver (postApiContractByContractinstanceidEndpointByEndpointname)
 import WalletData.Types (WalletNickname)
 
 -- I don't like having to provide a default state for this component, but it is needed by the
