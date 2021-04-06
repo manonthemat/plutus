@@ -13,7 +13,6 @@ import           Ledger                        (pubKeyHash)
 import           Plutus.Contract.Trace
 
 import           Plutus.Contracts.Crowdfunding
-import           Plutus.Contracts.Game
 import qualified Spec.Vesting
 
 import           Plutus.Trace.Emulator         (EmulatorTrace, runEmulatorStream)
@@ -31,10 +30,6 @@ tests = testGroup "showBlockchain"
           "renders a crowdfunding scenario sensibly"
           "test/Spec/renderCrowdfunding.txt"
           (render successfulCampaign)
-     , goldenVsString
-          "renders a guess scenario sensibly"
-          "test/Spec/renderGuess.txt"
-          (render guessTrace)
      , goldenVsString
           "renders a vesting scenario sensibly"
           "test/Spec/renderVesting.txt"

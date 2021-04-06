@@ -9,8 +9,6 @@ module Spec.GameStateMachine(tests, successTrace, successTrace2, failTrace) wher
 import           Test.Tasty
 import qualified Test.Tasty.HUnit                  as HUnit
 
-import qualified Spec.Lib                          as Lib
-
 import qualified PlutusTx                          as PlutusTx
 
 import           Control.Monad                     (void)
@@ -45,10 +43,10 @@ tests =
         .&&. walletFundsChange w1 (Ada.lovelaceValueOf (-8)))
         failTrace
 
-    , Lib.goldenPir "test/Spec/gameStateMachine.pir" $$(PlutusTx.compile [|| mkValidator ||])
+    , goldenPir "test/Spec/gameStateMachine.pir" $$(PlutusTx.compile [|| mkValidator ||])
 
     , HUnit.testCase "script size is reasonable"
-        (Lib.reasonable (Scripts.validatorScript G.scriptInstance) 49000)
+        (reasonable (Scripts.validatorScript G.scriptInstance) 49000)
 
     ]
 
